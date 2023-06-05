@@ -19,6 +19,18 @@ function Page({ initialData, page, setPage, maxFirstPage }) {
     const iArr = createArr(maxPage);
     let pArr = iArr.slice(v, Number(pageLimit) + v);
 
+    const firstPage = () =>{
+        setPage(1)
+        setBlockNum(0)
+        setCurrPage(1)
+    }
+
+    const lastPage = () =>{
+        setPage(maxPage)
+        setBlockNum(Math.ceil(maxPage/pageLimit)-1)
+        setCurrPage(maxPage)
+    }
+
     const prevPage = () => {
         if (currPage <= 1)
             return;
@@ -38,20 +50,30 @@ function Page({ initialData, page, setPage, maxFirstPage }) {
         setPage(n=>n+1);
     }
 
+    const nowPage = (n)=>{
+        setPage(n)
+        setCurrPage(n)
+    }
+
     return (
         <div className='paging'>
+            <button className='pagebtn' onClick={firstPage}>&lt;&lt;</button>
             <button className='pagebtn' onClick={prevPage}>&lt;</button>
-            {pArr.map(n => (
-                page == n ?
-                    <button className='pagebtn yellow'>
-                        {n}
-                    </button> :
-                    <button className='pagebtn'>
-                        {n}
-                    </button>
-
-            ))}
+            {pArr.map(num => (
+                page == num ?
+                    (<button key={num} className='pagebtn yellow'>
+                        {num}
+                    </button>) :
+                    (<button key={num} className='pagebtn' onClick={() => {
+                        nowPage(num);
+                    }}>
+                        {num}
+                    </button>)
+                    )
+                )
+            }
             <button className='pagebtn' onClick={nextPage}>&gt;</button>
+            <button className='pagebtn' onClick={lastPage}>&gt;&gt;</button>
         </div>
     );
 }

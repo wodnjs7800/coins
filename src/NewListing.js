@@ -19,7 +19,7 @@ function NewListing({data}) {
         <div>
           {data_slice.map(function (a, i) {
             return (
-              <TopItem Item={a} />
+              <TopItem key={i} Item={a} />
             )
           })
           }

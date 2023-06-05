@@ -13,6 +13,11 @@ function Markets({data}) {
     setSearch(e.target.value)
   }
 
+  // 거래량 정렬
+  data.sort(function(a,b){
+    return b.volume - a.volume
+  })
+
   //검색 정렬
   let filterSymbol = data.filter((p) => {
     return p.symbol.toLocaleLowerCase().includes(search.toLocaleLowerCase())
@@ -48,7 +53,7 @@ function Markets({data}) {
         <div>
           {filterData.map(function (a, i) {
             return (
-              <BottomItem Item={a} />
+              <BottomItem key={i} Item={a} />
             )
           })
           }
