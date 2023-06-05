@@ -82,7 +82,7 @@ function BottomItem({ Item }) {
       <div className="coin_name5 coin_name">{Number(Item.lowPrice).toLocaleString()}</div>
       <div className="coin_name6 coin_name">{(Number(Item.volume) / 1000000).toFixed(3)}M(USDT)</div>
       <div className="coin_name7 coin_name">
-        <img src={`${process.env.PUBLIC_URL}/images/chart_img.jpg`} width="70px" />
+        <img src={`${process.env.PUBLIC_URL}/images/chart_img.JPG`} width="70px" />
       </div>
       <div className="coin_name8 coin_name">
         <div className="coin_name9">Trade</div>
