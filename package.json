@@ -41,6 +41,5 @@
   "homepage": "https://wodnjs7800.github.io/coins",
   "devDependencies": {
     "gh-pages": "^5.0.0"
-  },
-  "proxy": "https://api.binance.com"
+  }
 }

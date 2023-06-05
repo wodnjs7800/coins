@@ -4,7 +4,7 @@ import Markets from './Markets';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const url = '/api/v3/ticker/24hr';
+const url = 'https://api.binance.com/api/v3/ticker/24hr';
 
 function App() {
   const [data,setData]=useState([]);
