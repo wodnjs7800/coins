@@ -2,37 +2,328 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.container {
+  min-width: 1440px;
   min-height: 100vh;
+  background-color: #f5f7fa;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: var(--size-20) 120px var(--size-24);
+}
+
+.top_box {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.top_name {
+  margin-bottom: 16px;
+  color: #121214;
+  font-weight: 600;
+  font-size: 24px;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  line-height: 32px;
+}
+
+.top_botton {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.left {
+  left: -30px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOoSURBVHgBzZpPVhNBEMa/bjQhj02ycaXPYeeO4AUkeoG4BBaYE4AnEE6gnID4fMJSdq40uHNnuIDGE5ANkgSdtqozGZLMZDKZ7snM7738YRimq7q/7q6qRsAC6gTl6wLqUqAqgceKPpVCWQBl/yaBDr136PqlUGhjgItSQ18zQiAhbHRvFfv0dQuKXskab5NDxybOLOzAyHBq+GCih00RaKKHo0UdWciBmzO8sW74FCTDw+I2juLeH8uBmxM4qoBzIbCB5dBBH7U4oyHn3TA4xZ4q4scSjWccQW1en6I+78ZIB/okmX9AM03JzEJRm2TcJ7Yh6r6ZEuI/dBUOkQOi5kWoA30aOpe8R45YAV4VdvB++nrAAT1hWfMZyCYKsqer+ticntjBOVBEK2/GMzwnaGIHVDHhgDdhHOQUcqJ683FyXvoSYulQ7/9CzmEpFftYFw10+Wd/BNxieiuOuF/GypMD/RJrDkxgKfUKOPCfzW9p9r6oVFF40dJOaAZdDL7W4F61kZTxURiOQCFZNDm3oWnjdVtl3Hv6FiaMj4L0LuzDMqHGe8gHWzBG4pluJw35RBnPuF3KZz5vwpTVPirStnzmGa9uu7j93oANepwF8toKS8QxfvClBmUwgSeexymslHbC5GUbP3woHEkZlgNDMjGe26UchVchBwbwxpSF8brtYc5ghnxUz8R4/XwbDkRB9Z/kdZuY8CrUhQHuz6bu6VBo1y08b0FWrC10AaQwdEANPJlk40SHV6FLGMIaz8QJKlfyHOjAAlk4wZ3PErK2RCzbCS4Sy94A57BIHCdMw2kfiQtZoaSAdrQLWGSeEzbCaVo926Xt4RyAcvENlolygsNpUwSX5eElNCSjd6b7QRhhTlgLp+VQNXdVCS5XiOg6ZFI4XpIP6/p75MYXE1p5mlRq1L3gO3BFBxdFyszyWNQKILDO+uevfiykJ7Onq1yj6BRn+27vCsRaf051XTS94MWMTmkH6+MXAtEoLakv05jQpmibBGrT1wMO8PCQlF4jZ1B5vTEunRGh+UBpl04MVfyDttQhW4o74RFDZL6R5tIaG560u7PrtnMTpusPqIsVnCx7eWXNs5S1GiKId8x6Rom/QgtLOjvQ/44gUQ/T/DSLHXSnLCmv14+jJDPNwjm3NxqH9HUPlhgZvkox2ejgIi6JiwbaERdbtG/sJy1PchjPkXASw/1nwAJjzlTpiRsKepSc0e91DwvdyxxH//5Ln2uUSCU1epz/AZSb1U5LOH0AAAAASUVORK5CYII=);
+}
+
+.right {
+  right: -30px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOpSURBVHgBzZpPctMwFMY/KUPSTDfpig0zpKzYNaxY0sAFwrLtos0J2p6A9gb0BAnD0C7pBSDhBE0vAGGGDatmE5qk1OI95U8d23EcWzL+zSRxZdd6T/qe/CRZwACqgVI/j5oUqEjgqaJfpVASQGl2kUCXvrtUfi0UOhihXazrskQIxISNHqzhkA63oegTr/IOOXSWxJmVHZgaThUfzbVwUgSaGOB0VUdWcuD2Au+MG+6BZHhS2MFp1OsjOXDbQFnlcSkEtpAOXQxRjdIbctkFo3PsqwKuUjSeKQuqs3+O2rILQx0YkmTugaZNySxCUZ1k3Ge2Iey6hRLif3QUTpABwuIi0IEhdZ1D3iND5ICD/C4+eMt9DuiAZc3/B9mEQfb01BAvvIHtj4ECWlkznuGYoMD2qWLOgUnAlJFRyInK7af5uJxJiKVDrf8DGYelVBhiU9TR479nPeAUko844lEJuedH+iPWy7ABS2mQx9GsTv4y0fpio4L8m5Z2QjPqYfS1CuemA9O4e2HcA/l42aSb/MvGg/G6oIT86xYkOWYady/IScEhEiKCDLXoBFn+StdrKni1oY+3g09aktPaEBvShHyYu6tjqLte8ElLPTHgWSCPrTCAotYdfamm6gRPXaWU5tLk1J1QKEuaYZVhkDSd4DkKj0JlGCaqE3PDbgzEeM5ghyhO5J4dIAnKpgNpwaNQDxbwpRYeuGfuf10iKVJYcCCK8Vpe/S4S0uVR6BoGiWy8iacyLVdyDHRhiFSN5/tR47OEjNwtbeN1nbRILAcjJI8kBKTTLmwYr5Foyw2aFNATrY2EiAVPVlvG0+jZKe6MYwDKwTckxPnd9ldiq+Wh5XPGv9oBktH7pM8Dbzpt03iNHKvmYVWClytE+DrkMngiL5/U9LHzvbk4jUgIjTxNWmqs6zqnhTe0cVGgmVkWF7V8CGyy/vlwlgvpYJ7oKtMo2sXZeXh2+dZG/5zrdVELs3AjdIu72HQX+LJRGlLf2krwkqBtEqh6y30OcPeQlI6RMWh5ve6WzpTA+UBxj3YMVfSNNuuQLYXd4IwhdJPPxNCaGA7avcXrtkt3KfsfURM5NNIeXlnzLGWthhCibbNe0MRfoYWU9g706wgStSDNe1lto9uypCatfhYmGS8rv2ow6Y0TOtyHIaaGr1FONt24iErslz20Iw626blxGHd5ktN4zoTjGD67BwzgcqZCd9xS0L1Unp7XLSx0K3Nq+vMv/a7TRCqu0W7+AfuknOwZz2vlAAAAAElFTkSuQmCC);
+}
+
+.top_inner_box {
+  position: relative;
+  display: inline-block;
+  width: 288px;
+  height: 270px;
+  padding-top: 24px;
+  text-align: center;
+  vertical-align: middle;
+  background: #fff;
+  border-radius: 16px;
+  transition: all .25s;
+  margin: 0px 10px;
+}
+
+.top0 {
+  height: 40px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.top1 {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  line-height: 28px;
+}
+
+.top2 {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 4px;
+  color: #81858c;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  line-height: 22px;
+  text-align: center;
+}
+
+.top3 {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 36px;
+  margin-top: 0;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+}
+
+
+.top4 {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 240px;
+  height: 48px;
+  color: #121214;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  line-height: 24px;
+  background: #f7a600;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.bottom_box {
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bottom_name {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0 20px;
+  padding: 0;
+}
+
+.bottom_name_markets {
+  flex: 1 1;
+  color: #000;
+  font-weight: 600;
+  font-size: 24px;
+  font-style: normal;
+  line-height: 56px;
+  margin: 0;
+  padding: 0;
+}
+
+.bottom_name_search {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 288px;
+  height: 44px;
+  line-height: 16px;
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  padding-right: 12px;
+}
+
+.serach_box_icon {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding: 12px 14px;
+  background: #f7a600;
+}
+
+.serach_box {
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  padding-left: 12px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.bottom_name_spot {
+  color: #121214;
+  font-weight: 600;
+  width: 100px;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  border-radius: 6px;
+  margin: 2px 0;
+}
+
+.bootom_name_box {
+  padding: 12px 24px;
+  border-bottom: 1px solid #e9edf2;
+  background-color: white;
+}
+
+.bottom_name_all {
+  color: #f7a600;
+  margin-right: 12px;
+}
+
+.bottom_inner {
+  background-color: white;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0 24px;
+  margin: 4px 0;
+}
+
+.bottom_inner_box {
+  cursor: pointer;
+}
+
+.bottom_inner_box:hover {
+  background-color: #f8f8f8;
+  ;
+}
+
+.coin_name {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 64px;
+  color: #121214;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  line-height: 22px;
+}
+
+.coin_name0 {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 23px;
+  padding-right: 9px;
+}
+
+.coin_name1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 64px;
+  color: #121214;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  line-height: 22px;
+  justify-content: flex-start;
+  min-width: 190px;
+  text-align: left;
+}
+
+.coin_name2 {
+  width: 130px;
+}
+
+.coin_name3 {
+  width: 135px;
+}
+
+.coin_name4 {
+  width: 140px;
+}
+
+.coin_name5 {
+  width: 140px;
+}
+
+.coin_name6 {
+  width: 180px;
+}
+
+.coin_name7 {
+  width: 118px;
+  text-align: right;
+}
+
+.coin_name8 {
+  justify-content: right;
+  width: 138px;
+}
+
+.coin_name9 {
+  background: #f7a600;
+  font-size: 12px;
+  height: 28px;
+  width: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #121214;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  line-height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.green {
+  color: #20b26c;
+}
+
+.red {
+  color: #ef454a;
+}
+
+.paging {
+  text-align: right;
+  padding: 20px 24px;
+  margin-top: 12px;
+}
+
+.pagebtn {
+  height: 30px;
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+  background-color: white;
+}
+.yellow{
+  background-color: #f7a600;;
 }

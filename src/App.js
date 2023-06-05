@@ -1,25 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import NewListing from './NewListing';
+import Markets from './Markets';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
+const url = 'https://api.binance.com/api/v3/ticker/24hr';
 
 function App() {
+  const [data,setData]=useState([]);
+
+  const getData = async () => {
+    const result = await axios.get(url);
+    setData(result.data);
+  }
+  useEffect(() => {getData()}, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <NewListing data={data} />
+      <Markets data={data} />
     </div>
   );
 }
-
 export default App;
