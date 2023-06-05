@@ -6,3 +6,4 @@
 - filter사용해서 검색창 구현
 - styled-components활용해서 필요한 CSS 사용
 - 컴포넌트 props로 data전달
+![image](https://github.com/wodnjs7800/coins/assets/90366875/48933e81-47ee-4046-b544-ad862ff51fbf)
